@@ -1,0 +1,34 @@
+"""
+Trolls are attacking your comment section!
+A common way to deal with this situation is to remove all of the vowels from the trolls' comments, 
+neutralizing the threat.
+Your task is to write a function that takes a string and return a new string with all vowels removed.
+For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+
+URL: https://www.codewars.com/kata/52fba66badcd10859f00097e
+"""
+
+
+
+
+
+def disemvowel(text: str) -> str:
+    """
+    En esta función, eliminamos todas las vocales de un comentario, 
+    neutralizando así la amenaza de los trolls. Eliminar las vocales 
+    es útil para reducir el impacto de sus comentarios ofensivos.
+    
+    Args:
+        text (str): El texto del comentario que contiene las vocales a eliminar.
+        
+    Returns:
+        str: El texto sin las vocales.
+    """
+    return "".join(char for char in text if char not in 'aeiouAEIOU')
+
+
+test1 = disemvowel("El dia está nublado. Espero que no llueva.")
+print(test1)  # Esperado: "l d stá nbld. spr q n llv."
+
+test2 = disemvowel("This website is for losers LOL!")
+print(test2)  # Esperado: "Ths wbst s fr lsrs LL!"
