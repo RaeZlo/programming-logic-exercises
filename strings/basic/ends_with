@@ -1,0 +1,53 @@
+"""
+Write a function that returns true if the string str ends with
+the substring ending, and false otherwise.
+
+URL: https://www.codewars.com/kata/51f2d1cafc9c0f745c00037d
+"""
+
+
+
+
+
+def ends_with(text: str, end: str) -> bool:
+    """
+    Esta función recibe una cadena de texto y una subcadena de texto (ending),
+    y devuelve True si la cadena termina con la subcadena especificada,
+    de lo contrario, devuelve False.
+    
+    Args:
+        text (str): La cadena de texto que se va a verificar.
+        end (str): La subcadena con la que se va a comparar al final de la cadena.
+        
+    Returns:
+        bool: True si la cadena termina con la subcadena, False de lo contrario.
+    """
+    return text.endswith(end)
+
+def ends_with_alt(text: str, end: str) -> bool:
+    """
+    Esta función recibe una cadena de texto y una subcadena de texto (ending),
+    y devuelve True si la cadena termina con la subcadena especificada,
+    de lo contrario, devuelve False. Esta es una implementación alternativa
+    usando indexación de la cadena.
+    
+    Args:
+        text (str): La cadena de texto que se va a verificar.
+        end (str): La subcadena con la que se va a comparar al final de la cadena.
+        
+    Returns:
+        bool: True si la cadena termina con la subcadena, False de lo contrario.
+    """
+    return text[-len(end):] == end
+
+test1 = ends_with("HelloWorld", "World")
+print(f"Resultado de la prueba 1 (ends_with): {test1}")  # Esperado: True
+
+test2 = ends_with("HelloWorld", "world")
+print(f"Resultado de la prueba 2 (ends_with): {test2}")  # Esperado: False
+
+test3 = ends_with_alt("PythonProgramming", "Programming")
+print(f"Resultado de la prueba 1 (ends_with_alt): {test3}")  # Esperado: True
+
+test4 = ends_with_alt("PythonProgramming", "programming")
+print(f"Resultado de la prueba 2 (ends_with_alt): {test4}")  # Esperado: False
